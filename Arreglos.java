@@ -58,10 +58,9 @@ public class Arreglos {
 
         // Quienes faltaron
         for (int i = 0; i < alumnos.length; i++) {
-            if (asistencia[i]) {
-            } else {
+            if (!asistencia[i]) {
                 System.out.println(alumnos[i] + " no asistió a clase.");
-            }
+            } 
         }
     }
 }
