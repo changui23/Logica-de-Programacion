@@ -214,6 +214,7 @@ public class CafeteriaApp {
         botonDia.setBounds(50, 25, 280, 530);
         panelCategorias.add(botonDia);
 
+        //Dialogo Dia
         botonDia.addActionListener(e -> {
             JDialog dialogoDia = new JDialog(ventana, "Día de operación", true);
 
@@ -325,6 +326,4 @@ public class CafeteriaApp {
         // Mostrar ventana
         ventana.setVisible(true);
     }
-
-    
 }
