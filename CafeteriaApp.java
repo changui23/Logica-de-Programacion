@@ -215,7 +215,40 @@ public class CafeteriaApp {
         panelCategorias.add(botonDia);
 
         botonDia.addActionListener(e -> {
-            JOptionPane.showMessageDialog(ventana, "Pantalla del Día");
+            JDialog dialogoDia = new JDialog(ventana, "Día de operación", true);
+
+            dialogoDia.setSize(350, 200);
+            dialogoDia.setLocationRelativeTo(ventana);
+            dialogoDia.setLayout(null);
+
+            JLabel fechaDia = new JLabel("Fecha de operación:");
+            fechaDia.setFont(new Font("Arial", Font.BOLD, 20));
+            fechaDia.setBounds(75, 10, 200, 30);
+            fechaDia.setForeground(Color.BLACK);
+            fechaDia.setHorizontalAlignment(SwingConstants.CENTER);
+
+            JTextField campoFechaDia = new JTextField(fecha.getText(), 10);
+            campoFechaDia.setFont(new Font("Arial", Font.PLAIN, 20));
+            campoFechaDia.setBounds(100, 50, 150, 30);
+
+            JButton aceptarDia = new JButton("Aceptar");
+            aceptarDia.setPreferredSize(new Dimension(280, 100));
+            aceptarDia.setFont(new Font("Arial", Font.BOLD, 20));
+            aceptarDia.setBackground(Color.decode("#9A7B4F"));
+            aceptarDia.setForeground(Color.WHITE);
+            aceptarDia.setFocusPainted(false);
+            aceptarDia.setBounds(100, 100, 150, 60);
+
+            aceptarDia.addActionListener(ev -> {
+                fecha.setText(campoFechaDia.getText());
+                dialogoDia.dispose();
+            });
+
+            dialogoDia.add(fechaDia);
+            dialogoDia.add(campoFechaDia);
+            dialogoDia.add(aceptarDia);
+
+            dialogoDia.setVisible(true);
         });
 
         // Boton Mesas
@@ -263,13 +296,6 @@ public class CafeteriaApp {
         pantallaCategorias.add(panelNavegacionCategorias);
         pantallaCategorias.add(panelAbajoCategorias);
 
-        /* =============
-        Pantalla Dia
-        ============= */ 
-
-        JPanel pantallaDia = new JPanel();
-        pantallaDia.setLayout(null);
-
         /* ===============
         Pantalla Mesas
         =============== */
@@ -291,7 +317,6 @@ public class CafeteriaApp {
         pantallas.add(pantallaInicio, "inicio");
         pantallas.add(pantallaUsuarios, "usuarios");
         pantallas.add(pantallaCategorias, "categorias");
-            pantallas.add(pantallaDia, "dia");
             pantallas.add(pantallaMesas, "mesas");
             pantallas.add(pantallaCaja, "caja");
 
@@ -300,4 +325,6 @@ public class CafeteriaApp {
         // Mostrar ventana
         ventana.setVisible(true);
     }
+
+    
 }
