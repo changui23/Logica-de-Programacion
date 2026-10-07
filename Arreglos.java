@@ -45,8 +45,8 @@ public class Arreglos {
 
 
         //Cuantos asistieron y cuantos faltaron
-        for (int i = 0; i < asistencia.length; i++) {
-            if (asistencia[i]) {
+        for (int i =  asistencia.length; i > 0; i--) {
+            if (asistencia[i-1]) {
                 cuantosAsistieron++;
             } else {
                 cuantosFaltaron++;
