@@ -1,9 +1,9 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ArreglosDinamicos{
     public static void main(String[] args) {
         String[] alumnos = new String[27];
-        boolean[] asistencia = new boolean[27];
         Scanner consola = new Scanner(System.in);
 
         alumnos[0] = "Álvarez Urrea Chelsea Jeraldyn";
@@ -34,33 +34,33 @@ public class ArreglosDinamicos{
         alumnos[25] = "Vilchis Perez Jose Miguel";
         alumnos[26] = "Viveros Tellez Kevin";
 
-        for (int i = 0; i < alumnos.length; i++) {
-            System.out.println("Asistio? (true/false) " + alumnos[i]);
-            asistencia[i] = Boolean.parseBoolean(consola.nextLine());
-        }
-
-        // Reporte de asistencia
         int cuantosAsistieron = 0;
         int cuantosFaltaron = 0;
+        ArrayList<String> faltaron = new ArrayList<>();
 
-
-        //Cuantos asistieron y cuantos faltaron
-        for (int i =  asistencia.length; i > 0; i--) {
-            if (asistencia[i-1]) {
+        for (int i = 0; i < alumnos.length; i++) {
+            System.out.println("Asistio? (true/false) " + alumnos[i]);
+            boolean respuesta = Boolean.parseBoolean(consola.nextLine());
+            if (respuesta) {
                 cuantosAsistieron++;
             } else {
                 cuantosFaltaron++;
+                faltaron.add(alumnos[i]);
             }
         }
 
+        consola.close();
+
+        // Cuantas asistieron
         System.out.println("Asistieron: " + cuantosAsistieron);
+
+        // Cuantas faltaron
         System.out.println("Faltaron: " + cuantosFaltaron);
 
-        // Quienes faltaron
-        for (int i = 0; i < alumnos.length; i++) {
-            if (!asistencia[i]) {
-                System.out.println(alumnos[i] + " no asistió a clase.");
-            } 
+        // Quienes Faltaron
+        System.out.println("Alumnos que faltaron: ");
+        for (int i = 0; i < faltaron.size(); i++) {
+            System.out.println(faltaron.get(i));
         }
     }
 }
