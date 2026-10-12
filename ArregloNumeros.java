@@ -28,6 +28,8 @@ public class ArregloNumeros {
             }
         }
 
+        consola.close();
+
         System.out.println("Número mayor: " + NumeroMayor + " Posicion: " + posicionMayor);
         System.out.println("Numero menor: " + NumeroMenor + " Posicion: " + posicionMenor);
     }
