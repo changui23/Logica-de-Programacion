@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ArreglosDinamicos{
+public class ArreglosDinamicos {
     public static void main(String[] args) {
         String[] alumnos = new String[27];
         Scanner consola = new Scanner(System.in);
