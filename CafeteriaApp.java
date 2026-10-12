@@ -6,6 +6,7 @@ public class CafeteriaApp {
 
         String[] usuarioCajero = {"Error"};
         JLabel nombreUsuario = new JLabel();
+        JLabel nombreUsuarioMesas = new JLabel();
         JLabel fecha = new JLabel("01/01/2026");
 
         //Ventana Principal
@@ -263,7 +264,10 @@ public class CafeteriaApp {
         panelCategorias.add(botonMesas);
 
         botonMesas.addActionListener(e -> {
-            JOptionPane.showMessageDialog(ventana, "Pantalla de Mesas");
+            ventana.setSize(808, 800);
+            ventana.setLocationRelativeTo(null);
+            cardLayout.show(pantallas, "mesas");
+            nombreUsuarioMesas.setText(nombreUsuario.getText());
         });
 
         // Boton Caja
@@ -303,6 +307,130 @@ public class CafeteriaApp {
 
         JPanel pantallaMesas = new JPanel();
         pantallaMesas.setLayout(null);
+
+        // Panel de navegación
+        JPanel panelNavegacionMesas = new JPanel();
+        panelNavegacionMesas.setLayout(null);
+        panelNavegacionMesas.setBackground(Color.decode("#9A7B4F"));
+        panelNavegacionMesas.setBounds(0, 0, 800, 50);
+
+        // nombre del usuario
+        nombreUsuarioMesas.setFont(new Font("Arial", Font.PLAIN, 20));
+        nombreUsuarioMesas.setForeground(Color.WHITE);
+        nombreUsuarioMesas.setBounds(15, 0, 200, 50);
+        panelNavegacionMesas.add(nombreUsuarioMesas);
+
+        // Regresar a Categorias
+        JButton botonRegresarMesas = new JButton("Regresar");
+        botonRegresarMesas.setPreferredSize(new Dimension(200, 40));
+        botonRegresarMesas.setFont(new Font("Arial", Font.BOLD, 18));
+        botonRegresarMesas.setBackground(Color.white);
+        botonRegresarMesas.setForeground(Color.decode("#9A7B4F"));
+        botonRegresarMesas.setFocusPainted(false);
+        botonRegresarMesas.setBounds(580, 5, 200, 40);
+        panelNavegacionMesas.add(botonRegresarMesas);
+
+        botonRegresarMesas.addActionListener(e -> {
+            ventana.setSize(1000, 700);
+            ventana.setLocationRelativeTo(null);
+            cardLayout.show(pantallas, "categorias");
+        });
+
+        // Panel de Mesas
+        JPanel panelMesas = new JPanel();
+        panelMesas.setLayout(null);
+        panelMesas.setBounds(0, 50, 800, 750);
+
+        // Mesa 1
+        JButton botonMesa1 = new JButton("Mesa 1");
+        botonMesa1.setPreferredSize(new Dimension(380, 200));
+        botonMesa1.setFont(new Font("Arial", Font.BOLD, 30));
+        botonMesa1.setBackground(Color.WHITE);
+        botonMesa1.setForeground(Color.decode("#9A7B4F"));
+        botonMesa1.setFocusPainted(false);
+        botonMesa1.setBounds(10, 10, 380, 200);
+        botonMesa1.setBorder(BorderFactory.createLineBorder(
+            Color.decode("#9A7B4F"), 2
+        ));
+        panelMesas.add(botonMesa1);
+
+        // Mesa 2
+        JButton botonMesa2 = new JButton("Mesa 2");
+        botonMesa2.setPreferredSize(new Dimension(380, 200));
+        botonMesa2.setFont(new Font("Arial", Font.BOLD, 30));
+        botonMesa2.setBackground(Color.WHITE);
+        botonMesa2.setForeground(Color.decode("#9A7B4F"));
+        botonMesa2.setFocusPainted(false);
+        botonMesa2.setBounds(410, 10, 380, 200);
+        botonMesa2.setBorder(BorderFactory.createLineBorder(
+            Color.decode("#9A7B4F"), 2
+        ));
+        panelMesas.add(botonMesa2);
+
+        // Mesa 3
+        JButton botonMesa3 = new JButton("Mesa 3");
+        botonMesa3.setPreferredSize(new Dimension(380, 200));
+        botonMesa3.setFont(new Font("Arial", Font.BOLD, 30));
+        botonMesa3.setBackground(Color.WHITE);
+        botonMesa3.setForeground(Color.decode("#9A7B4F"));
+        botonMesa3.setFocusPainted(false);
+        botonMesa3.setBounds(10, 220, 380, 200);
+        botonMesa3.setBorder(BorderFactory.createLineBorder(
+            Color.decode("#9A7B4F"), 2
+        ));
+        panelMesas.add(botonMesa3);
+
+        // Mesa 4
+        JButton botonMesa4 = new JButton("Mesa 4");
+        botonMesa4.setPreferredSize(new Dimension(380, 200));
+        botonMesa4.setFont(new Font("Arial", Font.BOLD, 30));
+        botonMesa4.setBackground(Color.WHITE);
+        botonMesa4.setForeground(Color.decode("#9A7B4F"));
+        botonMesa4.setFocusPainted(false);
+        botonMesa4.setBounds(410, 220, 380, 200);
+        botonMesa4.setBorder(BorderFactory.createLineBorder(
+            Color.decode("#9A7B4F"), 2
+        ));
+        panelMesas.add(botonMesa4);
+
+        // Mesa 5
+        JButton botonMesa5 = new JButton("Mesa 5");
+        botonMesa5.setPreferredSize(new Dimension(380, 200));
+        botonMesa5.setFont(new Font("Arial", Font.BOLD, 30));
+        botonMesa5.setBackground(Color.WHITE);
+        botonMesa5.setForeground(Color.decode("#9A7B4F"));
+        botonMesa5.setFocusPainted(false);
+        botonMesa5.setBounds(10, 430, 380, 200);
+        botonMesa5.setBorder(BorderFactory.createLineBorder(
+            Color.decode("#9A7B4F"), 2
+        ));
+        panelMesas.add(botonMesa5);
+
+        // Mesa 6
+        JButton botonMesa6 = new JButton("Mesa 6");
+        botonMesa6.setPreferredSize(new Dimension(380, 200));
+        botonMesa6.setFont(new Font("Arial", Font.BOLD, 30));
+        botonMesa6.setBackground(Color.WHITE);
+        botonMesa6.setForeground(Color.decode("#9A7B4F"));
+        botonMesa6.setFocusPainted(false);
+        botonMesa6.setBounds(410, 430, 380, 200);
+        botonMesa6.setBorder(BorderFactory.createLineBorder(
+            Color.decode("#9A7B4F"), 2
+        ));
+        panelMesas.add(botonMesa6);
+
+        // Para llevar
+        JButton botonLlevar = new JButton("Para llevar");
+        botonLlevar.setPreferredSize(new Dimension(300, 60));
+        botonLlevar.setFont(new Font("Arial", Font.BOLD, 30));
+        botonLlevar.setBackground(Color.decode("#9A7B4F"));
+        botonLlevar.setForeground(Color.WHITE);
+        botonLlevar.setFocusPainted(false);
+        botonLlevar.setBounds(250, 650, 300, 60);
+        panelMesas.add(botonLlevar);
+
+        pantallaMesas.add(panelMesas);
+        pantallaMesas.add(panelNavegacionMesas);
 
         /* ==============
         Pantalla Caja
