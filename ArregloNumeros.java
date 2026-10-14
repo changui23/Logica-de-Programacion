@@ -12,25 +12,25 @@ public class ArregloNumeros {
             numeros.add(numero);
         }
 
-        int NumeroMayor = numeros.get(0);
-        int NumeroMenor = numeros.get(0);
+        int mayor = numeros.get(0);
+        int menor = numeros.get(0);
         int posicionMayor = 0;
         int posicionMenor = 0;
 
         for (int i = 0; i < numeros.size(); i++) {
-            if (numeros.get(i) > NumeroMayor) {
-                NumeroMayor = numeros.get(i);
+            if (numeros.get(i) > mayor) {
+                mayor = numeros.get(i);
                 posicionMayor = i;
             }
-            if (numeros.get(i) < NumeroMenor) {
-                NumeroMenor = numeros.get(i);
+            if (numeros.get(i) < menor) {
+                menor = numeros.get(i);
                 posicionMenor = i;
             }
         }
 
         consola.close();
 
-        System.out.println("Número mayor: " + NumeroMayor + " Posicion: " + posicionMayor);
-        System.out.println("Numero menor: " + NumeroMenor + " Posicion: " + posicionMenor);
+        System.out.println("El número mayor es: " + mayor + " esta en: " + posicionMayor);
+        System.out.println("l numero menor es: " + menor + " esta en: " + posicionMenor);
     }
 }
