@@ -37,6 +37,7 @@ public class carreraAritmetica {
 
             System.out.println("Quiere otro numero? ");
             otroNumero = consola.nextLine();
+            
         }
         suma = 0;
         for (int i = 0; i < valoresEnteros.size(); i++) {
@@ -49,6 +50,7 @@ public class carreraAritmetica {
         int divisor = Integer.parseInt(consola.nextLine());
         datoEntrada = datoEntrada/divisor;
         System.out.println("Etapa 5: " + datoEntrada);
+        consola.close();
 
         DecimalFormat par = new DecimalFormat("#");
         String datoEntradaPar = par.format(datoEntrada);
@@ -56,12 +58,10 @@ public class carreraAritmetica {
         DecimalFormat non = new DecimalFormat("#.0000");
         String datoEntradaNon = non.format(datoEntrada % 1);
 
-
         if (mesNacimiento % 2 == 0) {
             System.out.println(datoEntradaPar);
         } else {
             System.out.println(datoEntradaNon);
         }
-        consola.close();
     }
 }
