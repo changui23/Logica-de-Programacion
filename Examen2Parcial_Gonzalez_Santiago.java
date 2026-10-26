@@ -21,7 +21,7 @@ public class Examen2Parcial_Gonzalez_Santiago {
         double promedio;
 
         String otroProducto;
-        String otroCliente = "si";
+        String otroCliente;
 
         Scanner consola = new Scanner(System.in);
 
