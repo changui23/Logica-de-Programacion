@@ -7,7 +7,7 @@ public class ventasVivero {
         String[] productos = { "Cactus", "Suculenta", "Maceta", "Tierra", "Fertilizante" };
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             System.out.println("\nVentas del dia " + (i + 1) + ":");
             for (int j = 0; j < precios.length; j++) {
                 System.out.println("" + productos[j] + ": \t\t$" + precios[j] + "\tIngrese la cantidad vendida: ");
@@ -16,7 +16,7 @@ public class ventasVivero {
         }
 
         System.out.println("\nResumen de ventas:");
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             double totalDia = 0;
             System.out.println("\nDia " + (i+1) + ":");
             for (int j = 0; j < precios.length; j++) {
